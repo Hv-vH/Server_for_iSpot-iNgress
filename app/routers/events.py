@@ -7,4 +7,5 @@ router = APIRouter()
 
 @router.get("/nearby")
 async def get_nearby_users(lat: float, lon: float, radius: float, db: AsyncSession = Depends(get_db)):
-    return await crud.get_nearby_users(db, lat, lon, radius)
+    events = await crud.get_nearby_events(db, lat, lon, radius)
+    return [{"id": event[0], "event_name": event[1], "location": event[2], "start_time": event[3]} for event in events]

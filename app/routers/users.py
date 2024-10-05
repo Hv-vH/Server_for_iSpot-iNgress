@@ -8,4 +8,6 @@ router = APIRouter()
 
 @router.get("/nearby")
 async def get_nearby_users(lat: float, lon: float, radius: float, db: AsyncSession = Depends(get_db)):
-    return await crud.get_nearby_users(db, lat, lon, radius)
+    users = await crud.get_nearby_users(db, lat, lon, radius)
+    
+    return [{"id": user[0], "username": user[1], "location": user[2]} for user in users]

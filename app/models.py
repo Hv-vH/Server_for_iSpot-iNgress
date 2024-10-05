@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, TIMESTAMP
-from sqlalchemy.dialects.postgresql import Geography
+from geoalchemy2 import Geography
 from app.database import Base
 
 class User(Base):
