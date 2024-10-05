@@ -33,6 +33,8 @@
 
 ## API 说明
 
+![docs](all.png "docs")
+
 1. 查询附近的用户
 
     GET /users/nearby-users
@@ -48,6 +50,8 @@
     - id: 用户的唯一标识符
     - usersname: 用户名
     - location: 用户的地理位置
+
+	![nearbyUser](nearbyUser.png "docs")
 
 2. 查询附近的活动
 
@@ -66,6 +70,8 @@
     - location: 活动的地理位置
     - 活动的开始时间
 
+	![nearbyEvent](nearbyEvent.png "docs")
+
 3. 查询附近的兴趣点
 
     GET /pois/nearby
@@ -79,6 +85,8 @@
 
 	返回参数：
     - 参考高德地图返回格式
+
+	![nearbyPoi](nearbyPoi.png "docs")
 
 ## 注意事项
 该项目需要配置 PostgreSQL 数据库，且必须启用 PostGIS 扩展。高德地图 API 使用需要提供有效的 API Key，并将其配置到代码中。
